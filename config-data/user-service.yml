@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:${SERVER.PORT:0}} # Puerto aleatorio que no esté en uso
+  port: ${PORT:${SERVER_PORT:0}} # Puerto aleatorio que no esté en uso
 eureka:
   client:
     fetch-registry: true
