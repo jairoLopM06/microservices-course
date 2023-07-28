@@ -1,0 +1,30 @@
+server:
+  port: 8080 #${PORT:${SERVER_PORT:0}} # Puerto aleatorio que no esté en uso
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost #${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: usuario-service
+          uri: lb://usuario-service
+          predicates:
+            - Path=/user/**
+        - id: car-service
+          uri: lb://car-service
+          predicates:
+            - Path=/car/**
+        - id: moto-service
+          uri: lb://moto-service
+          predicates:
+            - Path=/moto/**
