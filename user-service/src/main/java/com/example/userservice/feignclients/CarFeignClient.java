@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "car-serivce", url = "http://localhost:8002", path = "/car")
+@FeignClient(name = "car-service"/*, url = "http://localhost:8002"*/, path = "/car")
 public interface CarFeignClient {
 
     @PostMapping
