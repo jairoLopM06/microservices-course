@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          default-label: circuit-breaker #gateway #multiple-instances # Rama en Git
+          default-label: zipkin-sleuth #circuit-breaker #gateway #multiple-instances # Rama en Git
           uri: https://github.com/jairoLopM06/microservices-course # Respositorio remoto en donde se va a guardar la configuracion
           search-paths: config-data # Directorio con Archivos de configuracion para cada microservicios
   application:
